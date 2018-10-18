@@ -26,7 +26,7 @@ int main() {
 	dep.add_node("d");
 	std::vector<std::string> as = { "b", "c" };
 	std::vector<std::string> bs = { "c" };
-	std::vector<std::string> cs = { "d", "c" };
+	std::vector<std::string> cs = { "d" };
 	dep.add_dependencies("a", as);
 	dep.add_dependencies("b", bs);
 	dep.add_dependencies("c", cs);
