@@ -19,29 +19,29 @@ compiler.
 # Example
 ```cpp
 int main() {
-	dep_sort_stl<std::string> dep;
-	dep.add_node("a");
-	dep.add_node("b");
-	dep.add_node("c");
-	dep.add_node("d");
-	std::vector<std::string> as = { "b", "c" };
-	std::vector<std::string> bs = { "c" };
-	std::vector<std::string> cs = { "d" };
-	dep.add_dependencies("a", as);
-	dep.add_dependencies("b", bs);
-	dep.add_dependencies("c", cs);
-	const auto& result = dep.sort();
-	if (!result.has_cycles()) {
-		// print the sorted list
-		for (const auto& value : result.sorted) {
-			std::cout << value << std::endl;
-		}
-	} else {
-		// print nodes that could not be sorted due to cycles
-		for (const auto& value : result.unsorted) {
-			std::cout << value << std::endl;
-		}
-	}
+  dep_sort_stl<std::string> dep;
+  dep.add_node("a");
+  dep.add_node("b");
+  dep.add_node("c");
+  dep.add_node("d");
+  std::vector<std::string> as = { "b", "c" };
+  std::vector<std::string> bs = { "c" };
+  std::vector<std::string> cs = { "d" };
+  dep.add_dependencies("a", as);
+  dep.add_dependencies("b", bs);
+  dep.add_dependencies("c", cs);
+  const auto& result = dep.sort();
+  if (!result.has_cycles()) {
+    // print the sorted list
+    for (const auto& value : result.sorted) {
+      std::cout << value << std::endl;
+    }
+  } else {
+    // print nodes that could not be sorted due to cycles
+    for (const auto& value : result.unsorted) {
+      std::cout << value << std::endl;
+    }
+  }
 }
 ```
 
